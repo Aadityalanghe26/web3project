@@ -1,0 +1,15 @@
+{
+  "name": "certichain",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "blockchain",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces"
+  }
+}
