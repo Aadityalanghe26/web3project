@@ -20,11 +20,6 @@ export async function uploadToIPFS(file: File): Promise<UploadResult> {
   try {
     if (principal && proof) {
       const client = await Client.create();
-      // Add space delegation proof if available
-      if (typeof (Client as any).parse === 'function') {
-        const parsedProof = await (Client as any).parse(proof);
-        await client.addSpace(parsedProof);
-      }
       const cid = await client.uploadFile(file);
       const cidString = cid.toString();
 

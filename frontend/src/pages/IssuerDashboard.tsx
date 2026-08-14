@@ -31,9 +31,10 @@ export const IssuerDashboard: React.FC = () => {
     try {
       // In hardhat local/test environment, fetch sample certificates by incrementing IDs
       const list: CertificateStruct[] = [];
+      const currentYear = new Date().getFullYear();
       for (let i = 1; i <= 20; i++) {
         const paddedCounter = i.toString().padStart(6, '0');
-        const certId = `CERT-2026-${paddedCounter}`;
+        const certId = `CERT-${currentYear}-${paddedCounter}`;
         try {
           const cert = await contract.getCertificate(certId);
           if (cert && cert.exists) {

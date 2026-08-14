@@ -365,6 +365,19 @@
     {
       "inputs": [
         {
+          "internalType": "string",
+          "name": "certificateId",
+          "type": "string"
+        }
+      ],
+      "name": "revokeCertificate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "bytes32",
           "name": "role",
           "type": "bytes32"
@@ -376,19 +389,6 @@
         }
       ],
       "name": "revokeRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "certificateId",
-          "type": "string"
-        }
-      ],
-      "name": "revokeCertificate",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

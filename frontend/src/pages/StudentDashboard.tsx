@@ -18,9 +18,10 @@ export const StudentDashboard: React.FC = () => {
       const list: CertificateStruct[] = [];
 
       // Query contract sequence for certificates belonging to this account
+      const currentYear = new Date().getFullYear();
       for (let i = 1; i <= 30; i++) {
         const paddedCounter = i.toString().padStart(6, '0');
-        const certId = `CERT-2026-${paddedCounter}`;
+        const certId = `CERT-${currentYear}-${paddedCounter}`;
         try {
           const cert = await contract.getCertificate(certId);
           if (cert && cert.exists && cert.studentAddress.toLowerCase() === userLower) {
